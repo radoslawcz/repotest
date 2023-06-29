@@ -1,5 +1,6 @@
 
 name: Terraform
+  workflow_dispatch:
 
 on:
   push:
@@ -32,3 +33,5 @@ jobs:
 
     - name: Terraform Apply
       run: terraform apply -auto-approve -no-color
+on:
+  workflow_dispatch:
