@@ -1,19 +1,15 @@
+name: Terraform
 
 on:
   workflow_dispatch:
   push:
     branches:
       - main
-name: Terraform
-  workflow_dispatch:
-
-  push:
-    branches:
-      - main
 
 jobs:
   terraform:
-    name: 'Terraform'
+    name: Terraform
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
@@ -22,6 +18,7 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
+        terraform_version: 0.12.26
 
     - name: Terraform Init
       run: terraform init
